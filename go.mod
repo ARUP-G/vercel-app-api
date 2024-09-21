@@ -1,6 +1,6 @@
 module github.com/ARUP-G/URL-Shortener-With-GO
 
-go 1.20.5
+go 1.23
 
 require go.mongodb.org/mongo-driver v1.16.1
 
