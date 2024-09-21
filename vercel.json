@@ -1,9 +1,4 @@
 {
-  "functions": {
-    "api/*.go": {
-      "runtime": "vercel/go@1.20.5"
-    }
-  },
   "routes": [
     { "src": "/shorten", "dest": "/api/shorten" },
     { "src": "/.*", "dest": "/api/redirect" }
