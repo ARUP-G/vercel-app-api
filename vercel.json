@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/*.go": {
-      "runtime": "go@latest"
+      "runtime": "go@1.23.1"
     }
   },
   "routes": [
