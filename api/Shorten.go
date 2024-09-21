@@ -12,7 +12,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-var urlStore *storage.MongoStorage
+var URLStore *storage.MongoStorage
 
 func init() {
 	// Setup MongoDB connection
@@ -23,7 +23,7 @@ func init() {
 	}
 	log.Println("Connected to MongoDB")
 	db := client.Database("urlshortener")
-	urlStore = storage.NewMongoStorage(db)
+	URLStore = storage.NewMongoStorage(db)
 }
 
 // ShortenURL is the Vercel serverless function for shortening URLs
@@ -32,7 +32,7 @@ func ShortenURL(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 		return
 	}
-	handler.ShortenURL(urlStore)(w, r)
+	handler.ShortenURL(URLStore)(w, r)
 }
 
 // Vercel requires that the main function name matches the file name without the extension
